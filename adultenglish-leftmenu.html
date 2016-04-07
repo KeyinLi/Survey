@@ -1,0 +1,59 @@
+<div id="left-main-topics">
+    <div class="title">Feedback</div>
+    <div class="survey-topics">
+        <div class="topic">
+            <title>&nbsp;</title>
+
+            <detail ng-if="steps.cur == -1">
+                <div class="row">
+                    <div class="col-md-1"><i class="fa fa-circle-o or"></i></div>
+                    <div class="col-md-10">Member Lookup</div>
+                </div>
+                <br>
+            </detail>
+
+            <detail ng-if="steps.cur >= 0 && steps.cur < 7">
+                <div class="row">
+                    <div class="col-md-12 menuheader">{{member_type.plan}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 menuheader">{{member_info.FirstName}} {{member_info.LastName}}</div>
+                </div>
+                <div ng-repeat="step in steps.info">
+                    <div class="row menuitem" ng-if="$index==steps.cur">
+                        <div class="col-md-1"><i class="fa fa-circle-o or"></i></div>
+                        <div class="col-md-10">{{step.title}}</div>
+                    </div>
+                    <div class="row menuitem" ng-if="$index!=steps.cur && !step.completed">
+                        <div class="col-md-1"><i class="fa fa-check-circle-o"></i></div>
+                        <div class="col-md-10"><a class="menulink" href="javascript:void(0)" ng-click="linkTo($index)">{{step.title}}</a></div>
+                    </div>
+                    <div class="row menuitem" ng-if="$index!=steps.cur && step.completed">
+                        <div class="col-md-1"><i class="fa fa-check-circle-o gr"></i></div>
+                        <div class="col-md-10"><a class="menulink" href="javascript:void(0)" ng-click="linkTo($index)">{{step.title}}</a></div>
+                    </div>
+                </div>
+            </detail>
+
+            <detail ng-if="steps.cur == 7">
+                <div class="row">
+                    <div class="col-md-12 menuheader">{{member_type.plan}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 menuheader">{{member_info.FirstName}} {{member_info.LastName}}</div>
+                </div>
+                <div ng-repeat="step in steps.info">
+                    <div class="row menuitem" ng-if="$index==steps.cur">
+                        <div class="col-md-1"><i class="fa fa-circle-o or"></i></div>
+                        <div class="col-md-10">{{step.title}}</div>
+                    </div>
+                    <div class="row menuitem" ng-if="$index!=steps.cur">
+                        <div class="col-md-1"><i class="fa fa-check-circle-o gr"></i></div>
+                        <div class="col-md-10">{{step.title}}</div>
+                    </div>
+                </div>
+            </detail>
+
+        </div>
+    </div>
+</div>

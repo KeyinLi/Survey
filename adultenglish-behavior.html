@@ -1,0 +1,306 @@
+<div id="scheduler">
+    <div id="container">
+        <div class="title">Mental Health & Safety</div>
+        <div class="questions">
+            <div class="form-group">
+                <label class="question_required">13. Over the past two weeks, how often have you had little interest or pleasure in doing things?<label class="required" ng-show="!answers.Q13 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q13_1" ng-model="answers.Q13" value="1">
+                      <label for="Q13_1">Not at all</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q13_2" ng-model="answers.Q13" value="2">
+                      <label for="Q13_2">Several Days</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q13_3" ng-model="answers.Q13" value="3">
+                      <label for="Q13_3">More than half the day</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q13_4" ng-model="answers.Q13" value="4">
+                      <label for="Q13_4">Nearly every day</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">14. Over the past two weeks, how often have you felt down, depressed, or hopeless?<label class="required" ng-show="!answers.Q14 && required">Required</label></label>
+
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q14_1" ng-model="answers.Q14" value="1">
+                      <label for="Q14_1">Not all</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q14_2" ng-model="answers.Q14" value="2">
+                      <label for="Q14_2">Several Days</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q14_3" ng-model="answers.Q14" value="3">
+                      <label for="Q14_3">More than half the day</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q14_4" ng-model="answers.Q14" value="4">
+                      <label for="Q14_4">Nearly every day</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">15. During the past 4 weeks, have you accomplished less than you would like with your work or other regular daily activities as a result of your emotional health, like feeling depressed or anxious?<label class="required" ng-show="!answers.Q15 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q15_1" ng-model="answers.Q15" value="1">
+                      <label for="Q15_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q15_2" ng-model="answers.Q15" value="2">
+                      <label for="Q15_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">16. In general, how do you rate your overall stress level?<label class="required" ng-show="!answers.Q16 && required">Required</label></label>
+
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q16_1" ng-model="answers.Q16" value="1">
+                      <label for="Q16_1">Low</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q16_2" ng-model="answers.Q16" value="2">
+                      <label for="Q16_2">Moderate</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q16_3" ng-model="answers.Q16" value="3">
+                      <label for="Q16_3">High</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">17. On average, how well do you manage your stress?<label class="required" ng-show="!answers.Q17 && required">Required</label></label>
+
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q17_1" ng-model="answers.Q17" value="1">
+                      <label for="Q17_1">Very well</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q17_2" ng-model="answers.Q17" value="2">
+                      <label for="Q17_2">Somewhat well</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q17_3" ng-model="answers.Q17" value="3">
+                      <label for="Q17_3">Not well</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group" ng-show="member_type.age=='child' || (member_type.age_num>=4 && member_type.age_num<=17)">
+                <label class="question_required">18. Do you have any concerns about your child that they may be depressed or is showing less interest in doing things he/she usually does?<label class="required" ng-show="!answers.Q18 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q18_1" ng-model="answers.Q18" value="1">
+                      <label for="Q18_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q18_2" ng-model="answers.Q18" value="2">
+                      <label for="Q18_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">19. Do you feel safe in your home?<label class="required" ng-show="!answers.Q19 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q19_1" ng-model="answers.Q19" value="1">
+                      <label for="Q19_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q19_2" ng-model="answers.Q19" value="2">
+                      <label for="Q19_2">No</label>
+                    </div>
+                    <div ng-show="answers.Q19 == 2">
+                        <br><label class="question_required" for="Q19_C">If you do not feel safe, can you provide details?<label class="required" ng-show="!answers.Q19_C && required">Required</label></label>
+                        <input type="text" class="form-control" id="Q19_C" ng-model="answers.Q19_C">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">20. Have you experienced physical or sexual abuse, neglect, or been exposed to violent behavior?<label class="required" ng-show="!answers.Q20 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q20_1" ng-model="answers.Q20" value="1">
+                      <label for="Q20_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q20_2" ng-model="answers.Q20" value="2">
+                      <label for="Q20_2">No</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q20_3" ng-model="answers.Q20" value="3">
+                      <label for="Q20_3">Dont Know</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">21. Do you currently have, or have you had, a mental health condition?<label class="required" ng-show="!answers.Q21 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q21_1" ng-model="answers.Q21" value="1">
+                      <label for="Q21_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q21_2" ng-model="answers.Q21" value="2">
+                      <label for="Q21_2">No</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q21_3" ng-model="answers.Q21" value="3">
+                      <label for="Q21_3">In the past</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q21_4" ng-model="answers.Q21" value="4">
+                      <label for="Q21_4">Don't know</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="answers.Q21 == 1 || answers.Q21 == 3">
+                <label class="question_required">If yes, please select all that apply:
+                    <label class="required" ng-show="(answers.A21_A==undefined || !(answers.A21_A.length>0)) && required">Required</label>
+                </label>
+                <div class="opt">
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A21_A_1" checklist-model="answers.A21_A" checklist-value="1">
+                        <label for="A21_A_1">Schizophreniar</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A21_A_2" checklist-model="answers.A21_A" checklist-value="2">
+                        <label for="A21_A_2">Depression</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A21_A_3" checklist-model="answers.A21_A" checklist-value="3">
+                        <label for="A21_A_3">PTSD (post traumatic stress disorder)</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A21_A_4" checklist-model="answers.A21_A" checklist-value="4">
+                        <label for="A21_A_4">Obsessive-Compulsive Disorder</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A21_A_5" checklist-model="answers.A21_A" checklist-value="5">
+                        <label for="A21_A_5">Eating Disorder</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A21_A_6" checklist-model="answers.A21_A" checklist-value="6">
+                        <label for="A21_A_6">Bipolar Disorder</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A21_A_7" checklist-model="answers.A21_A" checklist-value="7">
+                        <label for="A21_A_7">Stillbirth</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A21_A_8" checklist-model="answers.A21_A" checklist-value="8">
+                        <label for="A21_A_8">Other</label>
+                    </div>
+                    <div ng-show="answers.A21_A.indexOf(8)>=0">
+                        <div>
+                            <br><label class="question_required" for="Q21_B">If other, please explain:<label class="required" ng-show="!answers.Q21_B && required">Required</label></label>
+                            <input type="text" class="form-control" id="Q21_B" ng-model="answers.Q21_B">
+                        </div>
+                        <div>
+                            <br><label class="question_required" for="Q21_C">List current conditions:<label class="required" ng-show="!answers.Q21_C && required">Required</label></label>
+                            <input type="text" class="form-control" id="Q21_C" ng-model="answers.Q21_C">
+                        </div>
+                        <div>
+                            <br><label class="question_required" for="Q21_D">List conditions in past:<label class="required" ng-show="!answers.Q21_D && required">Required</label></label>
+                            <input type="text" class="form-control" id="Q21_D" ng-model="answers.Q21_D">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">22. Is there any detail you would like to provide about your mental health condition?<label class="required" ng-show="!answers.Q22 && required">Required</label></label>
+                <div>
+                    <input type="text" class="form-control" id="Q22" ng-model="answers.Q22">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">23. While you are at work (or school) is time taken away due to personal or family health issues?<label class="required" ng-show="!answers.Q23 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q23_1" ng-model="answers.Q23" value="1">
+                      <label for="Q23_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q23_2" ng-model="answers.Q23" value="2">
+                      <label for="Q23_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="answers.Q23 == 1">
+                <label class="question_required">If yes,<label class="required" ng-show="!answers.Q23_A && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q23_A_1" ng-model="answers.Q23_A" value="1">
+                      <label for="Q23_A_1">Once in a while</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q23_A_2" ng-model="answers.Q23_A" value="2">
+                      <label for="Q23_A_2">Frequentyly</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">24. In the last 6 months, hve you had to miss work (or school) due to personal or family health issues?<label class="required" ng-show="!answers.Q24 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q24_1" ng-model="answers.Q24" value="1">
+                      <label for="Q24_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q24_2" ng-model="answers.Q24" value="2">
+                      <label for="Q24_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="answers.Q24 == 1">
+                <label class="question_required">If yes,<label class="required" ng-show="!answers.Q24_A && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q24_A_1" ng-model="answers.Q24_A" value="1">
+                      <label for="Q24_A_1">Once in a while</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q24_A_2" ng-model="answers.Q24_A" value="2">
+                      <label for="Q24_A_2">Frequently</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group" style="height: 80px">
+                <button ng-click="onPrev()" class="btn btn-warning pull-left"><i class="fa fa-backward"></i>&nbsp;&nbsp;Back</button>
+                <button ng-click="onNext()" class="btn btn-success pull-right">Next&nbsp;&nbsp;<i class="fa fa-forward"></i></button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+

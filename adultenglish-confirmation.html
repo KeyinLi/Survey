@@ -1,0 +1,31 @@
+﻿<div id="scheduler">
+    <div id="container" style="padding-bottom: 80px;">
+        <div class="title">Confirmation</div>
+        <div class="questions">
+            <div class="conf">
+                <i class="fa fa-check-circle-o bigi"></i>
+                <p>
+                <span>Congratulations!</span>
+                <br><br>
+                You have completed the Health Needs Screening requirements!
+                Upon confirming your eligibility, your rewards card will be loaded with $10 within the next 10 business days.
+                <br><br>Please visit  <a href="www..com/ ">www..com/ </a> or call xxx-xxx-xxxx if you experience any issues.
+                <br><br>
+                Your confirmation code is
+                <br>
+                <p ng-bind="confirmation_code"></p>
+                <br><br>
+                    <button class="btn btn-warning" ng-click="onClose()"><i class="fa fa-times"></i>&nbsp;&nbsp;Close</button>
+                    <button class="btn btn-success" ng-click="onPrint()"><i class="fa fa-print"></i>&nbsp;&nbsp;Print Confirmation</button>
+                    <!--<a href="#" class="btn btn-primary"><i class="fa fa-search"></i>&nbsp;&nbsp;View Results</a>-->
+                </p>
+            </div>
+        </div>
+        <div ng-show="print">
+            <div class="row" ng-repeat="(key,answer) in answers">
+                <div class="col-md-offset-3">{{key}} : {{answer}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body ng-controller="mainController">
+
+    <div>
+        <input type="button" value="English" ng-click="lang='en'">
+        <input type="button" value="Spanish" ng-click="lang='sp'">
+    </div>
+    <div ng-switch on="lang">
+        <p ng-switch-when="sp">spanish text</p>
+        <p ng-switch-default>english text</p>
+    </div>
+    <!--For ng-if example
+    <p ng-if="lang=='en'">This is Text for English</p>
+    <p ng-if="lang=='sp'">This is Text for Spanish</p>
+    <p ng-if="lang=='ch'">This is Text for Chinese</p>
+    -->
+</body>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
+<script>
+    var app = angular.module('app', []);
+    app.controller('mainController', ['$scope', function($scope) {
+
+        $scope.lang = 'en';
+
+    }]);
+</script>
+
+</html>

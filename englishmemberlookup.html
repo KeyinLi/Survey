@@ -1,0 +1,103 @@
+
+<div id="scheduler">
+    <div id="container">
+        <div class="title">Member Lookup</div>
+        <div class="questions">
+            <div class="form-group">
+                <label class="question_required">Please choose the Medicaid program the member is enrolled in:<label class="required" ng-show="!med_pro && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="med_pro_hip" ng-model="med_pro" name="med_pro" value="hip" ng-change="onSelectMedPro()">
+                      <label for="med_pro_hip">Healthy Indiana Plan "HIP"</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="med_pro_hhw" ng-model="med_pro" name="med_pro" value="hhw" ng-change="onSelectMedPro()">
+                      <label for="med_pro_hhw">Hoosier Healthwise HHW</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="med_pro_hcc" ng-model="med_pro" name="med_pro" value="hcc" ng-change="onSelectMedPro()">
+                      <label for="med_pro_hcc">Hoosier Care Connect HCC</label>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{med_pro_img_src}}" ng-show="med_pro_img_src != ''">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">First Name<label class="required" ng-show="!fname && required">Required</label></label>
+                <input type="text" class="form-control" id="fname" ng-model="fname">
+            </div>
+            <div class="form-group">
+                <label class="question_required">Last Name<label class="required" ng-show="!lname && required">Required</label></label>
+                <input type="text" class="form-control" id="lname" ng-model="lname">
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">Date of Birth<label class="required" ng-show="!dateValidate2(dob) && required">Required</label></label>
+                <input type="text" class="form-control" id="dob" ng-model="dob" placeholder="mm/dd/yyyy">
+            </div>
+
+            <!--
+            <div class="form-group">
+                <label class="question_required">Date of Birth<label class="required" ng-show="!dob && required">Required</label></label>
+                <p class="input-group datepicker">
+                    <input type="text" class="form-control" placeholder="MM/dd/yyyy" uib-datepicker-popup="MM/dd/yyyy" ng-model="dob" is-open="datepicker.opened" alt-input-formats="['M!/d!/yyyy','yyyy-M!-d!']"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="datepicker.opened = true"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>-->
+
+            <div class="form-group">
+                <label class="question_required">First 4 Digits of the RID (State Medicaid ID) Number:<br>(See example location on the ID card above)
+                    <label class="required" ng-show="!digit4Validate(rid) && required">No matches</label>
+                </label>
+                <input type="text" class="form-control" id="rid" ng-model="rid">
+
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">Please select from the choices below:<label class="required" ng-show="!member_type && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="member_type1" ng-model="member_type" name="member_type" value="1" ng-change="onSelectMemberType()">
+                      <label for="member_type1">I am an adult member (ages 21 and over) completing the survey on behalf of myself</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="member_type2" ng-model="member_type" name="member_type" value="2" ng-change="onSelectMemberType()">
+                      <label for="member_type2">I am an child member (ages 21 and over) completing the survey on behalf of myself</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="member_type3" ng-model="member_type" name="member_type" value="3" ng-change="onSelectMemberType()">
+                      <label for="member_type3">I am a member completing the survey on behalf of a child (ages 0 through 20)</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="member_type4" ng-model="member_type" name="member_type" value="4" ng-change="onSelectMemberType()">
+                      <label for="member_type4">I am a member completing the survey on behalf of another adult in my household (ages 21 and over)</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="member_type5" ng-model="member_type" name="member_type" value="5" ng-change="onSelectMemberType()">
+                      <label for="member_type5">I am a non-member adult completing the screening on behalf of a child member (ages 0 through 20)</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="member_type6" ng-model="member_type" name="member_type" value="6" ng-change="onSelectMemberType()">
+                      <label for="member_type6">I am a non-member adult completing the screening on behalf of a adult member (ages 21 and over)</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="member_type7" ng-model="member_type" name="member_type" value="7" ng-change="onSelectMemberType()">
+                      <label for="member_type7">I am a  representative completing the screening on behalf of a child member (ages 0 through 20)</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="member_type8" ng-model="member_type" name="member_type" value="8" ng-change="onSelectMemberType()">
+                      <label for="member_type8">I am an  representative completing the screening on behalf of a adult member (ages 21 and over)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-danger" ng-show="error" ng-bind="error"></div>
+            <div class="form-group" style="height: 80px">
+                <button ng-click="onNext()" class="btn btn-success pull-right" ng-click="submit_type=1">Next&nbsp;&nbsp;<i class="fa fa-forward"></i></button>
+            </div>
+        </div>
+    </div>
+</div>

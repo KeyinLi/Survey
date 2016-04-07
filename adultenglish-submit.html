@@ -1,0 +1,100 @@
+﻿
+<div id="scheduler">
+    <div id="container">
+        <div class="title">Submit</div>
+        <div class="questions">
+            <div class="form-group">
+                <label class="question_required">63.  In general, would you say your health is?<label class="required" ng-show="!answers.Q63 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q63_1" ng-model="answers.Q63" value="1">
+                      <label for="Q63_1">Excellent</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q63_2" ng-model="answers.Q63" value="2">
+                      <label for="Q63_2">Very good</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q63_3" ng-model="answers.Q63" value="3">
+                      <label for="Q63_3">Good</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q63_4" ng-model="answers.Q63" value="4">
+                      <label for="Q63_4">Fair</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q63_5" ng-model="answers.Q63" value="5">
+                      <label for="Q63_5">Poor</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">64.  Is there anything else you would like me to know about your health?<label class="required" ng-show="!answers.Q64 && required">Required</label></label>
+                <div>
+                    <input type="text" class="form-control" id="Q64" ng-model="answers.Q64">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question">65.  Your screening results may show that you have some special needs that one of our care managers can help you with.   Please enter a date and phone number for one of our case managers to contact you.
+                </label>
+                <div class="opt">
+                    <div>
+                        <br><label class="question_required" for="Q65_DTF">Date:<label class="required" ng-show="!dateValidate2(Q65_DTF) && required">No matches</label></label>
+                        <input type="text" class="form-control" id="Q65_DTF" ng-model="Q65_DTF" placeholder="mm/dd/yyyy">
+                        <!--
+                        <p class="input-group datepicker">
+                            <input type="text" class="form-control" placeholder="MM/dd/yyyy" uib-datepicker-popup="MM/dd/yyyy" id="Q65_DT" ng-model="Q65_DT" is-open="datepicker1.opened" alt-input-formats="['M!/d!/yyyy','yyyy-M!-d!']"/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="datepicker1.opened=true"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>-->
+                    </div>
+                    <div>
+                        <br><label class="question_required" for="Q65_A">Phone Number:<label class="required" ng-show="!phoneValidate(answers.Q65_A) && required">No matches</label></label>
+                        <input type="text" class="form-control" id="Q65_A" ng-model="answers.Q65_A" placeholder="(ex)123-456-7890 or 1234567890">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">66.  To confirm, do I have your consent to call you at the phone number you provided?
+                    <label class="required" ng-show="!answers.Q66 && required">Required</label>
+                </label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q66_1" ng-model="answers.Q66" value="1">
+                      <label for="Q66_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q66_2" ng-model="answers.Q66" value="2">
+                      <label for="Q66_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">67.  Would you like to complete another screening on behalf of another member in your household?
+                    <label class="required" ng-show="!answers.Q67 && required">Required</label>
+                </label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q67_1" ng-model="answers.Q67" value="1">
+                      <label for="Q67_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q67_2" ng-model="answers.Q67" value="2">
+                      <label for="Q67_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" style="height: 80px">
+                <button ng-click="onPrev()" class="btn btn-warning pull-left"><i class="fa fa-backward"></i>&nbsp;&nbsp;Back</button>
+                <button ng-click="onNext()" class="btn btn-success pull-right">Submit&nbsp;&nbsp;<i class="fa fa-forward"></i></button>
+            </div>
+
+        </div>
+    </div>
+</div>

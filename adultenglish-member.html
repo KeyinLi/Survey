@@ -1,0 +1,423 @@
+<div id="scheduler">
+    <div id="container">
+        <div class="title">Member Information</div>
+        <div class="questions">
+            <div class="form-group" ng-show="member_type.vendor == 'no'">
+                <label class="question_required">What prompted you to complete the survey today?  Did you receive a:<label class="required" ng-show="!answers.A10 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A10_1" ng-model="answers.A10" name="A10" value="1">
+                      <label for="A10_1">Letter in the mail</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A10_2" ng-model="answers.A10" name="A10" value="2">
+                      <label for="A10_2">Phone call</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A10_3" ng-model="answers.A10" name="A10" value="3">
+                      <label for="A10_3">E-mail</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A10_4" ng-model="answers.A10" name="A10" value="4">
+                      <label for="A10_4">Text message</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A10_5" ng-model="answers.A10" name="A10" value="5">
+                      <label for="A10_5">Post card in mail</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A10_6" ng-model="answers.A10" name="A10" value="6">
+                      <label for="A10_6">Other</label>
+                    </div>
+                    <div ng-show="answers.A10 == 6">
+                        <br><label class="question_required" for="A10_A">If other, please specify<label class="required" ng-show="!answers.A10_A && required">Required</label></label>
+                        <input type="text" class="form-control" id="A10_A" ng-model="answers.A10_A">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.vendor == 'yes'">
+                <label class="question">What  Unit do you represent?</label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A11_1" ng-model="answers.A11" value="1">
+                      <label for="A11_1">Vendor Call Center</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A11_2" ng-model="answers.A11" value="2">
+                      <label for="A11_2">Vendor, Other</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A11_3" ng-model="answers.A11" value="3">
+                      <label for="A11_3"> Customer Care</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A11_4" ng-model="answers.A11" value="4">
+                      <label for="A11_4">Case Management</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A11_5" ng-model="answers.A11" value="5">
+                      <label for="A11_5">Behavioral Health Case Management</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A11_6" ng-model="answers.A11" value="6">
+                      <label for="A11_6">Quality Management</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A11_7" ng-model="answers.A11" value="7">
+                      <label for="A11_7">Field Staff Outreach</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A11_8" ng-model="answers.A11" value="8">
+                      <label for="A11_8">Keying Paper Survey</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A11_9" ng-model="answers.A11" value="9">
+                      <label for="A11_9">Provider/Provider Office</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A11_10" ng-model="answers.A11" value="10">
+                      <label for="A11_10">Other</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label>Members Address</label>
+                <br>
+                {{member_info.FirstName}} {{member_info.LastName}}
+                <br>
+                {{member_info.Address1}}
+                <br>
+                {{member_info.Address2}}
+                <br>
+                {{member_info.City}},{{member_info.State}} {{member_info.Zip}}
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">Is this the member's correct address?<label class="required" ng-show="!answers.A12 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A12_1" ng-model="answers.A12" name="A12" value="1">
+                      <label for="A12_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A12_2" ng-model="answers.A12" name="A12" value="2">
+                      <label for="A12_2">No</label>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="answers.A12 == 2">
+                <div class="form-group">
+                    <label>If No, please fill in the correct address:<br></label>
+                    <label class="question_required">Corrected Street address:<label class="required" ng-show="!answers.A13 && required">Required</label></label>
+                    <input type="text" class="form-control" id="A13" ng-model="answers.A13">
+                </div>
+                <div class="form-group">
+                    <label class="question_required">Correct City:<label class="required" ng-show="!answers.A14 && required">Required</label></label>
+                    <input type="text" class="form-control" id="A14" ng-model="answers.A14">
+
+                </div>
+                <div class="form-group">
+                    <label class="question_required">Corrected State:<label class="required" ng-show="!answers.A15 && required">Required</label></label>
+                    <input type="text" class="form-control" id="A15" ng-model="answers.A15">
+
+                </div>
+                <div class="form-group">
+                    <label class="question_required">Corrected Zip code:<label class="required" ng-show="!answers.A16 && required">Required</label></label>
+                    <input type="text" class="form-control" id="A16" ng-model="answers.A16">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Members Contact Information</label>
+                <br>
+                {{member_info.PrimaryPhone}}
+                <br>
+                {{member_info.SecondaryPhone}}
+                <br>
+                {{member_info.PrimaryEmail}}
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">Is this the member's correct contact information?<label class="required" ng-show="!answers.A21 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A21_1" ng-model="answers.A21" name="A21" value="1">
+                      <label for="A21_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A21_2" ng-model="answers.A21" name="A21" value="2">
+                      <label for="A21_2">No</label>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="answers.A21 == 2">
+                <div class="form-group">
+                    <label>If No, please fill in the correct contact information:<br></label>
+                    <label class="question_required">Corrected Primary phone number:<label class="required" ng-show="!phoneValidate(answers.A22) && required">No matches</label></label>
+                    <input type="text" class="form-control" id="A22" ng-model="answers.A22">
+                </div>
+                <div class="form-group">
+                    <label class="question">Correct Alternate phone number:<label class="required" ng-show="answers.A23 && !phoneValidate(answers.A23) && required">No matches</label></label>
+                    <input type="text" class="form-control" id="A23" ng-model="answers.A23">
+                </div>
+                <div class="form-group">
+                    <label class="question_required">Corrected Email address:<label class="required" ng-show="!emailValidate(answers.A24) && required">No matches</label></label>
+                    <input type="text" class="form-control" id="A24" ng-model="answers.A24">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">Primary Phone Type<label class="required" ng-show="!answers.S25 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S25_1" ng-model="answers.S25" value="1">
+                      <label for="S25_1">Home Phone</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S25_2" ng-model="answers.S25" value="2">
+                      <label for="S25_2">Cell Phone</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">Do we have your permission to call or text you at the phone number povided or email you at the email address provided?<label class="required" ng-show="!answers.A26 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A26_1" ng-model="answers.A26" name="A26" value="1">
+                      <label for="A26_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A26_2" ng-model="answers.A26" name="A26" value="2">
+                      <label for="A26_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">Height in feet:<label class="required" ng-show="!digit1Validate(answers.S27) && required">No matches</label></label>
+                <input type="text" class="form-control" id="S27" ng-model="answers.S27">
+            </div>
+            <div class="form-group">
+                <label class="question_required">Height in inches:<label class="required" ng-show="!digit2LValidate(answers.S27_A) && required">No matches</label></label>
+                <input type="text" class="form-control" id="S27_A" ng-model="answers.S27_A">
+            </div>
+            <div class="form-group">
+                <label class="question_required">Weight in Pounds:<label class="required" ng-show="!digit3LValidate(answers.S28) && required">No matches</label></label>
+                <input type="text" class="form-control" id="S28" ng-model="answers.S28">
+            </div>
+
+            <div class="form-group">
+                <label class="question" ng-if="member_info.Gender=='F'">Gender: Female</label>
+                <label class="question" ng-if="member_info.Gender=='M'">Gender: Male</label>
+                <!--
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A29_1" ng-model="answers.A29" name="A29" value="1">
+                      <label for="A29_1">Male</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="A29_2" ng-model="answers.A29" name="A29" value="2">
+                      <label for="A29_2">Female</label>
+                    </div>
+                </div>
+                -->
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">Primary language preference:<label class="required" ng-show="!answers.S30 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S30_1" ng-model="answers.S30" name="S30" value="1">
+                      <label for="S30_1">English</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S30_2" ng-model="answers.S30" name="S30" value="2">
+                      <label for="S30_2">Spanish</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                        <input type="radio" id="S30_3" ng-model="answers.S30" name="S30" value="3">
+                        <label for="S30_3">Other</label>
+                    </div>
+                    <div ng-show="answers.S30 == 3">
+                        <br><label class="question_required" for="S30_A">If other, please specify<label class="required" ng-show="!answers.S30_A && required">Required</label></label>
+                        <input type="text" class="form-control" id="S30_A" ng-model="answers.S30_A">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">Ethnicity: Hispanic or Latino<label class="required" ng-show="!answers.S31 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S31_1" ng-model="answers.S31" name="S31" value="1">
+                      <label for="S31_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S31_2" ng-model="answers.S31" name="S31" value="2">
+                      <label for="S31_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">Race (mark all that apply):<label class="required" ng-show="(answers.S32==undefined || !(answers.S32.length>0)) && required">Required</label></label>
+                <div class="opt">
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="S32_1" checklist-model="answers.S32" checklist-value="1">
+                        <label for="S32_1">White</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="S32_2" checklist-model="answers.S32" checklist-value="2">
+                        <label for="S32_2">Black or African American</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="S32_3" checklist-model="answers.S32" checklist-value="3">
+                        <label for="S32_3">Asian</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="S32_4" checklist-model="answers.S32" checklist-value="4">
+                        <label for="S32_4">American Indian or Alaska Native</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="S32_5" checklist-model="answers.S32" checklist-value="5">
+                        <label for="S32_5">Native Hawaiian or Pacific Islander</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="S32_6" checklist-model="answers.S32" checklist-value="6">
+                        <label for="S32_6">Other</label>
+                    </div>
+                    <div ng-show="answers.S32.indexOf(6) >= 0">
+                        <br><label class="question_required" for="S32_A">If other, please specify<label class="required" ng-show="!answers.S32_A && required">Required</label></label>
+                        <input type="text" class="form-control" id="S32_A" ng-model="answers.S32_A">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">Marital Status<label class="required" ng-show="!answers.S33 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S33_1" ng-model="answers.S33" name="S33" value="1">
+                      <label for="S33_1">Single</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S33_2" ng-model="answers.S33" name="S33" value="2">
+                      <label for="S33_2">Married</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S33_3" ng-model="answers.S33" name="S33" value="3">
+                      <label for="S33_3">Divorced</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S33_4" ng-model="answers.S33" name="S33" value="4">
+                      <label for="S33_4">Separated</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <br><label class="question_required" for="S34">Number of minor children you have<label class="required" ng-show="!digit3LValidate(answers.S34) && required">No matches</label></label>
+                    <input type="text" class="form-control" id="S34" ng-model="answers.S34">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">Highest level of education<label class="required" ng-show="!answers.S35 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S35_1" ng-model="answers.S35" name="S35" value="1">
+                      <label for="S35_1">College Degree</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S35_2" ng-model="answers.S35" name="S35" value="2">
+                      <label for="S35_2">Some College</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S35_3" ng-model="answers.S35" name="S35" value="3">
+                      <label for="S35_3">Trade School Completion</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S35_4" ng-model="answers.S35" name="S35" value="4">
+                      <label for="S35_4">Some Trade School</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S35_5" ng-model="answers.S35" name="S35" value="5">
+                      <label for="S35_5">High School Graduate</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S35_6" ng-model="answers.S35" name="S35" value="6">
+                      <label for="S35_6">Some High School</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S35_7" ng-model="answers.S35" name="S35" value="7">
+                      <label for="S35_7">Middle School Graduate</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S35_8" ng-model="answers.S35" name="S35" value="8">
+                      <label for="S35_8">Elementary School Graduate</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S35_9" ng-model="answers.S35" name="S35" value="9">
+                      <label for="S35_9">Still Going to School</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="S35_10" ng-model="answers.S35" name="S35" value="10">
+                      <label for="S35_10">Other</label>
+                    </div>
+                    <div ng-show="answers.S35 == 10">
+                        <br><label class="question_required" for="S35_A">If other, please specify<label class="required" ng-show="!answers.S35_A && required">Required</label></label>
+                        <input type="text" class="form-control" id="S35_A" ng-model="answers.S35_A">
+                    </div>
+                </div>
+            </div>
+
+            <div ng-show="member_type.vendor == 'yes'">
+
+                <div class="form-group">
+                    <label>Authorized Representative: (the person, if applicable, you designate we can discuss your health care services with)<br></label>
+                    <label class="question">Last Name:</label> <input type="text" class="form-control" id="S36" ng-model="answers.S36">
+
+                </div>
+                <div class="form-group">
+                    <label class="question">First Name:</label> <input type="text" class="form-control" id="S37" ng-model="answers.S37">
+
+                </div>
+                <div class="form-group">
+                    <label class="question">Primary phone number:</label> <input type="text" class="form-control" id="S38" ng-model="answers.S38">
+
+                </div>
+                <div class="form-group">
+                    <label class="question">Alternate phone number:</label> <input type="text" class="form-control" id="S39" ng-model="answers.S39">
+
+                </div>
+                <div class="form-group">
+                    <label class="question">Email address:</label> <input type="text" class="form-control" id="S40" ng-model="answers.S40">
+
+                </div>
+
+                <div class="form-group">
+                    <label class="question">Primary Phone Type:</label>
+                    <div class="opt">
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="S41_1" ng-model="answers.S41" value="1">
+                          <label for="S41_1">Home Phone</label>
+                        </div>
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="S41_2" ng-model="answers.S41" value="2">
+                          <label for="S41_2">Cell Phone</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" style="height: 80px">
+                <button ng-click="onNext()" class="btn btn-success pull-right">Next&nbsp;&nbsp;<i class="fa fa-forward"></i></button>
+            </div>
+        </div>
+    </div>
+</div>

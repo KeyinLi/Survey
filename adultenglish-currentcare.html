@@ -1,0 +1,221 @@
+﻿<div id="scheduler">
+    <div id="container">
+        <div class="title">Current Care</div>
+        <div class="questions">
+            <div class="form-group">
+                <label class="question_required">25. Do you need help scheduling doctor's appointments?<label class="required" ng-show="!answers.Q25 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q25_1" ng-model="answers.Q25" value="1">
+                      <label for="Q25_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q25_2" ng-model="answers.Q25" value="2">
+                      <label for="Q25_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">26. Do you have a reliable way to get to your doctor's visits?<label class="required" ng-show="!answers.Q26 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q26_1" ng-model="answers.Q26" value="1">
+                      <label for="Q26_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q26_2" ng-model="answers.Q26" value="2">
+                      <label for="Q26_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">27. Do you have any future hospital stays or surgeries planned?<label class="required" ng-show="!answers.Q27 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q27_1" ng-model="answers.Q27" value="1">
+                      <label for="Q27_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q27_2" ng-model="answers.Q27" value="2">
+                      <label for="Q27_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">28. Do you use special equipment, such as?
+                    <label class="required" ng-show="(answers.A28==undefined || !(answers.A28.length>0)) && required">Required</label>
+                </label>
+                <div class="opt">
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A28_1" checklist-model="answers.A28" checklist-value="1">
+                      <label for="A28_1">Cane</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A28_2" checklist-model="answers.A28" checklist-value="2">
+                      <label for="A28_2">Wheelchair</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A28_3" checklist-model="answers.A28" checklist-value="3">
+                      <label for="A28_3">Walker</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A28_4" checklist-model="answers.A28" checklist-value="4">
+                      <label for="A28_4">Special bed</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A28_5" checklist-model="answers.A28" checklist-value="5">
+                      <label for="A28_5">Sleeping machine/apnea monitor</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A28_6" checklist-model="answers.A28" checklist-value="6">
+                      <label for="A28_6">Breathing machine/ nebulizer</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A28_7" checklist-model="answers.A28" checklist-value="7">
+                      <label for="A28_7">Oxygen</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A28_8" checklist-model="answers.A28" checklist-value="8">
+                      <label for="A28_8">Other special equipment</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A28_9" checklist-model="answers.A28" checklist-value="9">
+                      <label for="A28_9">No</label>
+                    </div>
+                    <div ng-show="answers.A28.indexOf(8)>=0">
+                        <br><label class="question_required" for="A28_A">Please specify:<label class="required" ng-show="!answers.A28_A && required">Required</label></label>
+                        <input type="text" class="form-control" id="A28_A" ng-model="answers.A28_A">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">29. Do you have a vision problem that requires special equipment for reading?<label class="required" ng-show="!answers.Q29 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q29_1" ng-model="answers.Q29" value="1">
+                      <label for="Q29_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q29_2" ng-model="answers.Q29" value="2">
+                      <label for="Q29_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="answers.Q29 == 1">
+                <label class="question_required">If yes, vision equipment such as:<label class="required" ng-show="(answers.A29_A==undefined || !(answers.A29_A.length>0)) && required">Required</label></label>
+                <div class="opt">
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A29_A_1" checklist-model="answers.A29_A" checklist-value="1">
+                      <label for="A29_A_1">Glasses</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A29_A_2" checklist-model="answers.A29_A" checklist-value="2">
+                      <label for="A29_A_2">Contacts</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A29_A_3" checklist-model="answers.A29_A" checklist-value="3">
+                      <label for="A29_A_3">Other</label>
+                    </div>
+
+                    <div ng-show="answers.A29_A.indexOf(3)>=0">
+                        <br><label class="question_required" for="Q29_B">If other, please list vision equipment:<label class="required" ng-show="!answers.Q29_B && required">Required</label></label>
+                        <input type="text" class="form-control" id="Q29_B" ng-model="answers.Q29_B">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">30. Do you have a hearing problem that requires special equipment?<label class="required" ng-show="!answers.Q30 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q30_1" ng-model="answers.Q30" value="1">
+                      <label for="Q30_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q30_2" ng-model="answers.Q30" value="2">
+                      <label for="Q30_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="answers.Q30 == 1">
+                <label class="question_required">If yes, hearing equipment such as:<label class="required" ng-show="(answers.A30_A==undefined || !(answers.A30_A.length>0)) && required">Required</label></label>
+                <div class="opt">
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A30_A_1" checklist-model="answers.A30_A" checklist-value="1">
+                      <label for="A30_A_1">Hearing Aid(s)</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A30_A_2" checklist-model="answers.A30_A" checklist-value="2">
+                      <label for="A30_A_2">Cochlear Implant(s)</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A30_A_3" checklist-model="answers.A30_A" checklist-value="3">
+                      <label for="A30_A_3">Other</label>
+                    </div>
+                    <div ng-show="answers.A30_A.indexOf(3)>=0">
+                        <br><label class="question_required" for="Q30_B">If other, please list hearing equipment:<label class="required" ng-show="!answers.Q30_B && required">Required</label></label>
+                        <input type="text" class="form-control" id="Q30_B" ng-model="answers.Q30_B">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">31. Do you currently receive any help in your home?<label class="required" ng-show="!answers.Q31 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q31_1" ng-model="answers.Q31" value="1">
+                      <label for="Q31_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q31_2" ng-model="answers.Q31" value="2">
+                      <label for="Q31_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="answers.Q31 == 1">
+                <label class="question_required">If yes, identify type of support:<label class="required" ng-show="(answers.A31_A==undefined || !(answers.A31_A.length>0)) && required">Required</label></label>
+                <div class="opt">
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A31_A_1" checklist-model="answers.A31_A" checklist-value="1">
+                      <label for="A31_A_1">Home Health</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A31_A_2" checklist-model="answers.A31_A" checklist-value="2">
+                      <label for="A31_A_2">Family/Friend</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A31_A_3" checklist-model="answers.A31_A" checklist-value="3">
+                      <label for="A31_A_3">In Home Supportive Services</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A31_A_4" checklist-model="answers.A31_A" checklist-value="4">
+                      <label for="A31_A_4">Financial Support</label>
+                    </div>
+                    <div class="checkbox-custom">
+                      <input type="checkbox" id="A31_A_5" checklist-model="answers.A31_A" checklist-value="5">
+                      <label for="A31_A_5">Other Support</label>
+                    </div>
+                    <div ng-show="answers.A31_A.indexOf(5)>=0">
+                        <br><label class="question_required" for="Q31_B">If yes, other support, please list type of support:<label class="required" ng-show="!answers.Q31_B && required">Required</label></label>
+                        <input type="text" class="form-control" id="Q31_B" ng-model="answers.Q31_B">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" style="height: 80px">
+                <button ng-click="onPrev()" class="btn btn-warning pull-left"><i class="fa fa-backward"></i>&nbsp;&nbsp;Back</button>
+                <button ng-click="onNext()" class="btn btn-success pull-right">Next&nbsp;&nbsp;<i class="fa fa-forward"></i></button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+

@@ -1,0 +1,681 @@
+﻿<div id="scheduler">
+    <div id="container">
+        <div class="title">Physical Health</div>
+        <div class="questions">
+            <div class="form-group">
+                <label class="question_required">32.  Do you have breathing problems?  Please select all that apply:
+                    <label class="required" ng-show="(answers.A32==undefined || !(answers.A32.length>0)) && required">Required</label>
+                </label>
+                <div class="opt">
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A32_1" checklist-model="answers.A32" checklist-value="1">
+                        <label for="A32_1">No Breathing Problems</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A32_2" checklist-model="answers.A32" checklist-value="2">
+                        <label for="A32_2">COPD/Emphysema</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A32_3" checklist-model="answers.A32" checklist-value="3">
+                        <label for="A32_3">Congestive Heart Failure (CFH)</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A32_4" checklist-model="answers.A32" checklist-value="4">
+                        <label for="A32_4">Asthma</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A32_5" checklist-model="answers.A32" checklist-value="5">
+                        <label for="A32_5">Cystic Fibrosis</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A32_6" checklist-model="answers.A32" checklist-value="6">
+                        <label for="A32_6">Tuberculosis</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A32_7" checklist-model="answers.A32" checklist-value="7">
+                        <label for="A32_7">Pulmonary Hypertension</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A32_8" checklist-model="answers.A32" checklist-value="8">
+                        <label for="A32_8">Other Breathing Problem(s)</label>
+                    </div>
+                    <div ng-show="answers.A32.indexOf(8)>=0">
+                        <br><label class="question_required" for="Q32_A">If yes, please specify:<label class="required" ng-show="!answers.Q32_A && required">Required</label></label>
+                        <input type="text" class="form-control" id="Q32_A" ng-model="answers.Q32_A">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">33. Have you ever been diagnosed with cancer?<label class="required" ng-show="!answers.Q33 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q33_1" ng-model="answers.Q33" value="1">
+                      <label for="Q33_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q33_2" ng-model="answers.Q33" value="2">
+                      <label for="Q33_2">No</label>
+                    </div>
+                    <div ng-show="answers.Q33 == 1">
+                        <br><label class="question_required" for="Q33_A_DTF">If so, when?<label class="required" ng-show="!dateValidate2(Q33_A_DTF) && required">Date format is mm/dd/yyyy</label></label>
+                        <input type="text" class="form-control" id="Q33_A_DTF" ng-model="Q33_A_DTF" placeholder="mm/dd/yyyy">
+                        <!--
+                        <p class="input-group datepicker">
+                            <input type="text" class="form-control" placeholder="MM/dd/yyyy" uib-datepicker-popup="MM/dd/yyyy" id="Q33_A_DT" ng-model="Q33_A_DT" is-open="datepicker1.opened" alt-input-formats="['M!/d!/yyyy','yyyy-M!-d!']"/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="datepicker1.opened=true"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                        -->
+                    </div>
+                    <div ng-show="answers.Q33 == 1">
+                        <br><label class="question_required" for="Q33_B">What type of cancer?<label class="required" ng-show="!answers.Q33_B && required">Required</label></label>
+                        <input type="text" class="form-control" id="Q33_B" ng-model="answers.Q33_B">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">34. Have you ever been diagnosed with HIV or AIDS?<label class="required" ng-show="!answers.Q34 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q34_1" ng-model="answers.Q34" value="1">
+                      <label for="Q34_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q34_2" ng-model="answers.Q34" value="2">
+                      <label for="Q34_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="answers.Q34 == 1">
+                <label class="question_required">If yes, are you currently receiving treatment?<label class="required" ng-show="!answers.Q34_A && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q34_A_1" ng-model="answers.Q34_A" value="1">
+                      <label for="Q34_A_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q34_A_2" ng-model="answers.Q34_A" value="2">
+                      <label for="Q34_A_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">35. Do you have or have you had a blood disorder?<label class="required" ng-show="!answers.Q35 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q35_1" ng-model="answers.Q35" value="1">
+                      <label for="Q35_1">No Blood Disorder</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q35_2" ng-model="answers.Q35" value="2">
+                      <label for="Q35_2">Do not know</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q35_3" ng-model="answers.Q35" value="3">
+                      <label for="Q35_3">Hemophilia</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q35_4" ng-model="answers.Q35" value="4">
+                      <label for="Q35_4">Sickle Cell Disease</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q35_5" ng-model="answers.Q35" value="5">
+                      <label for="Q35_5">Other Blood Disorder</label>
+                    </div>
+                    <div ng-show="answers.Q35 == 5">
+                        <br><label class="question_required" for="Q35_A">If other, please specify:<label class="required" ng-show="!answers.Q35_A && required">Required</label></label>
+                        <input type="text" class="form-control" id="Q35_A" ng-model="answers.Q35_A">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">36.  If you have, or had a blood disease, it is<label class="required" ng-show="!answers.Q36 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q36_1" ng-model="answers.Q36" value="1">
+                      <label for="Q36_1">Current</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q36_2" ng-model="answers.Q36" value="2">
+                      <label for="Q36_2">Past</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age_num > 14">
+                <label class="question_required">37.  Do you currently, or have you ever had, problems with alchohol or drugs?<label class="required" ng-show="!answers.Q37 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q37_1" ng-model="answers.Q37" value="1">
+                      <label for="Q37_1">Current</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q37_2" ng-model="answers.Q37" value="2">
+                      <label for="Q37_2">In the Past</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q37_3" ng-model="answers.Q37" value="3">
+                      <label for="Q37_3">Don't know</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q37_4" ng-model="answers.Q37" value="4">
+                      <label for="Q37_4">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age_num > 14">
+                <label class="question_required">38.  On average, how many alcoholic beverages do you drink per week?<label class="required" ng-show="!answers.Q38 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q38_1" ng-model="answers.Q38" value="1">
+                      <label for="Q38_1">0</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q38_2" ng-model="answers.Q38" value="2">
+                      <label for="Q38_2">1-7</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q38_3" ng-model="answers.Q38" value="3">
+                      <label for="Q38_3">8-15</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q38_4" ng-model="answers.Q38" value="4">
+                      <label for="Q38_4">More than 15</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age_num > 14">
+                <label class="question_required">39.  Do you smoke or use tobacco products?<label class="required" ng-show="!answers.Q39 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q39_1" ng-model="answers.Q39" value="1">
+                      <label for="Q39_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q39_2" ng-model="answers.Q39" value="2">
+                      <label for="Q39_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age_num > 14">
+                <label class="question_required">40.  Does anyone in your home smoke or use tobacco products?<label class="required" ng-show="!answers.Q40 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q40_1" ng-model="answers.Q40" value="1">
+                      <label for="Q40_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q40_2" ng-model="answers.Q40" value="2">
+                      <label for="Q40_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age_num > 14">
+                <label class="question_required">41.  If you do smoke, are you interested or willing to quit?<label class="required" ng-show="!answers.Q41 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q41_1" ng-model="answers.Q41" value="1">
+                      <label for="Q41_1">Not considering</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q41_2" ng-model="answers.Q41" value="2">
+                      <label for="Q41_2">Thinking about quitting</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q41_3" ng-model="answers.Q41" value="3">
+                      <label for="Q41_3">Planning  to quit soon</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q41_4" ng-model="answers.Q41" value="4">
+                      <label for="Q41_4">Want help</label>
+                    </div>
+                    <div ng-show="answers.Q41 == 4">
+                        <br><label>If you need help to quit using tobacco products, please call 1-800-QUIT-NOW (1-877-784-8669)</label>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age_num <= 20">
+                <label class="question_required">42.  Have you been told that your child has autism or a form of autism (such as PDD or pervasive developmental disorder or Asperger's?<label class="required" ng-show="!answers.Q42 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q42_1" ng-model="answers.Q42" value="1">
+                      <label for="Q42_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q42_2" ng-model="answers.Q42" value="2">
+                      <label for="Q42_2">No</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q42_3" ng-model="answers.Q42" value="3">
+                      <label for="Q42_3">Don'tknow</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age_num <= 20">
+                <label class="question_required">43.  Are your child's shots up-to date?<label class="required" ng-show="!answers.Q43 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q43_1" ng-model="answers.Q43" value="1">
+                      <label for="Q43_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q43_2" ng-model="answers.Q43" value="2">
+                      <label for="Q43_2">No</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q43_3" ng-model="answers.Q43" value="3">
+                      <label for="Q43_3">Don'tknow</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age=='child' || (member_type.age_num>=0 && member_type.age_num<=3)">
+                <label class="question_required">44.  Does your child receive services from a program called First Steps?<label class="required" ng-show="!answers.Q44 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q44_1" ng-model="answers.Q44" value="1">
+                      <label for="Q44_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q44_2" ng-model="answers.Q44" value="2">
+                      <label for="Q44_2">No</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q44_3" ng-model="answers.Q44" value="3">
+                      <label for="Q44_3">Don'tknow</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age=='child' || (member_type.age_num>=0 && member_type.age_num<=3)">
+                <label class="question_required">45.  Has your child ever been tested for lead poisoning?<label class="required" ng-show="!answers.Q45 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q45_1" ng-model="answers.Q45" value="1">
+                      <label for="Q45_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q45_2" ng-model="answers.Q45" value="2">
+                      <label for="Q45_2">No</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q45_3" ng-model="answers.Q45" value="3">
+                      <label for="Q45_3">Don'tknow</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age=='child' || (member_type.age_num >= 4 && member_type.age_num <= 20)">
+                <label class="question_required">
+                    46.  When you think about other children the same age as your child, does your child have trouble doing any of these things?  Check all that apply
+                    <label class="required" ng-show="(answers.A46==undefined || !(answers.A46.length>0)) && required">Required</label>
+                </label>
+                <div class="opt">
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A46_1" checklist-model="answers.A46" checklist-value="1">
+                        <label for="A46_1">Eating</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A46_2" checklist-model="answers.A46" checklist-value="2">
+                        <label for="A46_2">Walking</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A46_3" checklist-model="answers.A46" checklist-value="3">
+                        <label for="A46_3">Dressing</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A46_4" checklist-model="answers.A46" checklist-value="4">
+                        <label for="A46_4">Bathing</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A46_5" checklist-model="answers.A46" checklist-value="5">
+                        <label for="A46_5">Toileting</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A46_6" checklist-model="answers.A46" checklist-value="6">
+                        <label for="A46_6">Talking</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A46_7" checklist-model="answers.A46" checklist-value="7">
+                        <label for="A46_7">Playing</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A46_8" checklist-model="answers.A46" checklist-value="8">
+                        <label for="A46_8">Not able to do any of these things</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A46_9" checklist-model="answers.A46" checklist-value="9">
+                        <label for="A46_9">Don't know</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A46_10" checklist-model="answers.A46" checklist-value="10">
+                        <label for="A46_10">N/A</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age=='child' || (member_type.age_num >= 4 && member_type.age_num <= 20)">
+                <label class="question_required">47.  Does your child receive services through Special Education or have an IEP through your school district?<label class="required" ng-show="!answers.Q47 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q47_1" ng-model="answers.Q47" value="1">
+                      <label for="Q47_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q47_2" ng-model="answers.Q47" value="2">
+                      <label for="Q47_2">No</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q47_3" ng-model="answers.Q47" value="3">
+                      <label for="Q47_3">Don't know</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age=='child' || (member_type.age_num >= 4 && member_type.age_num <= 20)">
+                <label class="question_required">48.  Does your child have any trouble with emotions, behaving, learning, focusing or getting along with others?<label class="required" ng-show="!answers.Q48 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q48_1" ng-model="answers.Q48" value="1">
+                      <label for="Q48_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q48_2" ng-model="answers.Q48" value="2">
+                      <label for="Q48_2">No</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q48_3" ng-model="answers.Q48" value="3">
+                      <label for="Q48_3">Don't know</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age=='child' || (member_type.age_num >= 4 && member_type.age_num <= 20)">
+                <label class="question_required">49.  Does your child exhibit unusual or uncontrollable behavior?<label class="required" ng-show="!answers.Q49 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q49_1" ng-model="answers.Q49" value="1">
+                      <label for="Q49_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q49_2" ng-model="answers.Q49" value="2">
+                      <label for="Q49_2">No</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q49_3" ng-model="answers.Q49" value="3">
+                      <label for="Q49_3">Don't know</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_type.age=='child' || (member_type.age_num >= 4 && member_type.age_num <= 20)">
+                <label class="question_required">50.  Does your child see a doctor or clinic for problems with emotions, learning or his/her behavior?<label class="required" ng-show="!answers.Q50 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q50_1" ng-model="answers.Q50" value="1">
+                      <label for="Q50_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q50_2" ng-model="answers.Q50" value="2">
+                      <label for="Q50_2">No</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q50_3" ng-model="answers.Q50" value="3">
+                      <label for="Q50_3">Don't know</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">51.  Do you have Diabetes (Type 1 or Type 2)?<label class="required" ng-show="!answers.Q51 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q51_1" ng-model="answers.Q51" value="1">
+                      <label for="Q51_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q51_2" ng-model="answers.Q51" value="2">
+                      <label for="Q51_2">No</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q51_3" ng-model="answers.Q51" value="3">
+                      <label for="Q51_3">Don't know</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="answers.Q51 == 1">
+                <label class="question_required">If yes, select type:<label class="required" ng-show="!answers.Q51_A && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q51_A_1" ng-model="answers.Q51_A" value="1">
+                      <label for="Q51_A_1">Type 1</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q51_A_2" ng-model="answers.Q51_A" value="2">
+                      <label for="Q51_A_2">Type 2</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q51_A_3" ng-model="answers.Q51_A" value="3">
+                      <label for="Q51_A_3">Don't know</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">52.  Do you have or have you had Kidney Disease?<label class="required" ng-show="!answers.Q52 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q52_1" ng-model="answers.Q52" value="1">
+                      <label for="Q52_1">Yes - Current</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q52_2" ng-model="answers.Q52" value="2">
+                      <label for="Q52_2">In the past</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q52_3" ng-model="answers.Q52" value="3">
+                      <label for="Q52_3">Don't know</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q52_4" ng-model="answers.Q52" value="4">
+                      <label for="Q52_4">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">53.  Do you have problems with your liver (like hepatitis or cirrhosis)?<label class="required" ng-show="!answers.Q53 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q53_1" ng-model="answers.Q53" value="1">
+                      <label for="Q53_1">Yes - Current</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q53_2" ng-model="answers.Q53" value="2">
+                      <label for="Q53_2">In the past</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q53_3" ng-model="answers.Q53" value="3">
+                      <label for="Q53_3">Don't know</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q53_4" ng-model="answers.Q53" value="4">
+                      <label for="Q53_4">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">54.  Do you have or have you had epilepsy or seizures?<label class="required" ng-show="!answers.Q54 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q54_1" ng-model="answers.Q54" value="1">
+                      <label for="Q54_1">Yes - Current</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q54_2" ng-model="answers.Q54" value="2">
+                      <label for="Q54_2">In the past</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q54_3" ng-model="answers.Q54" value="3">
+                      <label for="Q54_3">Don't know</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q54_4" ng-model="answers.Q54" value="4">
+                      <label for="Q54_4">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">
+                    55.  Have you ever been diagnosed withan intellectual or developmental disability or delay, like autism, speech or language impairment, or a specific learning disability?
+                    <label class="required" ng-show="!answers.Q55 && required">Required</label>
+                </label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q55_1" ng-model="answers.Q55" value="1">
+                      <label for="Q55_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q55_2" ng-model="answers.Q55" value="2">
+                      <label for="Q55_2">No</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q55_3" ng-model="answers.Q55" value="3">
+                      <label for="Q55_3">Don't know</label>
+                    </div>
+                    <div ng-show="answers.Q55 == 1">
+                        <br><label class="question_required" for="Q55_A">If yes, please list the condition:<label class="required" ng-show="!answers.Q55_A && required">Required</label></label>
+                        <input type="text" class="form-control" id="Q55_A" ng-model="answers.Q55_A">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">
+                    56.  Have you had any of the following done in the past year?
+                    <label class="required" ng-show="(answers.A56==undefined || !(answers.A56.length>0)) && required">Required</label>
+                </label>
+                <div class="opt">
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_1" checklist-model="answers.A56" checklist-value="1">
+                        <label for="A56_1">Physical exam by a physician</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_2" checklist-model="answers.A56" checklist-value="2">
+                        <label for="A56_2">Well child exam and well child immunizations (ages 0-20)</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_3" checklist-model="answers.A56" checklist-value="3">
+                        <label for="A56_3">Fecal Occult Blood Test</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_4" checklist-model="answers.A56" checklist-value="4">
+                        <label for="A56_4">Colonoscopy</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_5" checklist-model="answers.A56" checklist-value="5">
+                        <label for="A56_5">Blood Pressure Check</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_6" checklist-model="answers.A56" checklist-value="6">
+                        <label for="A56_6">Glucose (Blood Pressure) Check</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_7" checklist-model="answers.A56" checklist-value="7">
+                        <label for="A56_7">Cholesterol Test</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_8" checklist-model="answers.A56" checklist-value="8">
+                        <label for="A56_8">Pap Smear</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_9" checklist-model="answers.A56" checklist-value="9">
+                        <label for="A56_9">Mammogram</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_10" checklist-model="answers.A56" checklist-value="10">
+                        <label for="A56_10">Breast Exam</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_11" checklist-model="answers.A56" checklist-value="11">
+                        <label for="A56_11">Flue Shot</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_12" checklist-model="answers.A56" checklist-value="12">
+                        <label for="A56_12">Pneumonia Shot</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_13" checklist-model="answers.A56" checklist-value="13">
+                        <label for="A56_13">Vision Screening</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_14" checklist-model="answers.A56" checklist-value="14">
+                        <label for="A56_14">Skin Cancer</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A56_15" checklist-model="answers.A56" checklist-value="15">
+                        <label for="A56_15">None of the Above</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">57.  Have you seen a dentist in the past year?<label class="required" ng-show="!answers.Q57 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q57_1" ng-model="answers.Q57" value="1">
+                      <label for="Q57_1">Type 1</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q57_2" ng-model="answers.Q57" value="2">
+                      <label for="Q57_2">Type 2</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q57_3" ng-model="answers.Q57" value="3">
+                      <label for="Q57_3">Don't know</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">58.  Do you have any dental issues that you need help with?<label class="required" ng-show="!answers.Q58 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q58_1" ng-model="answers.Q58" value="1">
+                      <label for="Q58_1">Type 1</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q58_2" ng-model="answers.Q58" value="2">
+                      <label for="Q58_2">Type 2</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q58_3" ng-model="answers.Q58" value="3">
+                      <label for="Q58_3">Don't know</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" style="height: 80px">
+                <button ng-click="onPrev()" class="btn btn-warning pull-left"><i class="fa fa-backward"></i>&nbsp;&nbsp;Back</button>
+                <button ng-click="onNext()" class="btn btn-success pull-right">Next&nbsp;&nbsp;<i class="fa fa-forward"></i></button>
+            </div>
+
+        </div>
+    </div>
+</div>

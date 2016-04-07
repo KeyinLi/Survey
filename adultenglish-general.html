@@ -1,0 +1,324 @@
+
+
+<div id="scheduler">
+    <div id="container">
+        <div class="title">General Health</div>
+        <div class="questions">
+            <div class="form-group">
+                <label class="question_required" ng-if="member_type.age=='adult'">1. Have you been to your doctor in the past year?<label class="required" ng-show="!answers.Q1 && required">Required</label></label>
+                <label class="question_required" ng-if="member_type.age=='child'">1. Have your child been to your doctor in the past year?<label class="required" ng-show="!answers.Q1 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q1_1" ng-model="answers.Q1" name="Q1" value="1">
+                      <label for="Q1_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q1_2" ng-model="answers.Q1" name="Q1" value="2">
+                      <label for="Q1_2">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required" ng-if="member_type.age=='adult'">2. Have you been admitted to the hospital in the last 6 months?<label class="required" ng-show="!answers.Q2 && required">Required</label></label>
+                <label class="question_required" ng-if="member_type.age=='child'">2. Have your child been admitted to the hospital in the last 6 months?<label class="required" ng-show="!answers.Q2 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q2_1" ng-model="answers.Q2" name="Q2" value="1">
+                      <label for="Q2_1">0 Admit</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q2_2" ng-model="answers.Q2" name="Q2" value="2">
+                      <label for="Q2_2">1 Admit</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q2_3" ng-model="answers.Q2" name="Q2" value="3">
+                      <label for="Q2_3">2-4 Admits</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q2_4" ng-model="answers.Q2" name="Q2" value="4">
+                      <label for="Q2_4">5 or more admits</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="question_required" ng-if="member_type.age=='adult'">3. Have you been to the emergency room anytime in the past 6 months?<label class="required" ng-show="!answers.Q3 && required">Required</label></label>
+                <label class="question_required" ng-if="member_type.age=='child'">3. Have your child been to the emergency room anytime in the past 6 months?<label class="required" ng-show="!answers.Q3 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q3_1" ng-model="answers.Q3" name="Q3" value="1">
+                      <label for="Q3_1">0 Admit</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q3_2" ng-model="answers.Q3" name="Q3" value="2">
+                      <label for="Q3_2">1 Admit</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q3_3" ng-model="answers.Q3" name="Q3" value="3">
+                      <label for="Q3_3">2-4 Admits</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q3_4" ng-model="answers.Q3" name="Q3" value="4">
+                      <label for="Q3_4">5 or more admits</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required" ng-if="member_type.age=='adult'">4. Are you taking any prescription medications?<label class="required" ng-show="!answers.Q4 && required">Required</label></label>
+                <label class="question_required" ng-if="member_type.age=='child'">4. Is your child taking any prescription medications?<label class="required" ng-show="!answers.Q4 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q4_1" ng-model="answers.Q4" name="Q4" value="1">
+                      <label for="Q4_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q4_2" ng-model="answers.Q4" name="Q4" value="2">
+                      <label for="Q4_2">No</label>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="answers.Q4 == 1">
+                <div class="form-group">
+                    <label class="question_required">5. If yes, how many prescription medications do you take?<label class="required" ng-show="!answers.Q5 && required">Required</label></label>
+                    <div class="opt">
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q5_1" ng-model="answers.Q5" name="Q5" value="1">
+                          <label for="Q5_1">One to three</label>
+                        </div>
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q5_2" ng-model="answers.Q5" name="Q5" value="2">
+                          <label for="Q5_2">Four to six</label>
+                        </div>
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q5_3" ng-model="answers.Q5" name="Q5" value="3">
+                          <label for="Q5_3">More than six</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="question_required">6. If yes, do you take the medicines like your doctor tells you?<label class="required" ng-show="!answers.Q6 && required">Required</label></label>
+                    <div class="opt">
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q6_1" ng-model="answers.Q6" value="1">
+                          <label for="Q6_1">Always or almost always</label>
+                        </div>
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q6_2" ng-model="answers.Q6" value="2">
+                          <label for="Q6_2">Some of the time</label>
+                        </div>
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q6_3" ng-model="answers.Q6" value="3">
+                          <label for="Q6_3">Rarely or never</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="question_required">7. If yes, do you have any trouble getting your medication?<label class="required" ng-show="!answers.Q7 && required">Required</label></label>
+                    <div class="opt">
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q7_1" ng-model="answers.Q7" value="1">
+                          <label for="Q7_1">Yes</label>
+                        </div>
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q7_2" ng-model="answers.Q7" value="2">
+                          <label for="Q7_2">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="question_required" ng-if="member_type.age=='adult'">8. Have you had or are you awaiting an organ transplant?<label class="required" ng-show="!answers.Q8 && required">Required</label></label>
+                <label class="question_required" ng-if="member_type.age=='child'">8. Have your child had or is your child awaiting an organ transplant?<label class="required" ng-show="!answers.Q8 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q8_1" ng-model="answers.Q8" value="1">
+                      <label for="Q8_1">Current</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q8_2" ng-model="answers.Q8" value="2">
+                      <label for="Q8_2">In the past</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q8_3" ng-model="answers.Q8" value="3">
+                      <label for="Q8_3">No</label>
+                    </div>
+                    <div ng-show="answers.Q8 == 1 || answers.Q8 == 2">
+                        <br><label class="question_required" for="Q8_A_DTF">If yes, when did you have a transplant?<label class="required" ng-show="!dateValidate2(Q8_A_DTF) && required">Required</label></label>
+                        <input type="text" class="form-control" id="Q8_A_DTF" ng-model="Q8_A_DTF" placeholder="mm/dd/yyyy">
+                        <!--
+                        <p class="input-group datepicker">
+                            <input type="text" class="form-control" placeholder="MM/dd/yyyy" uib-datepicker-popup="MM/dd/yyyy" id="Q8_A_DT" ng-model="Q8_A_DT" is-open="datepicker1.opened" alt-input-formats="['M!/d!/yyyy','yyyy-M!-d!']"/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="datepicker1.opened=true"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="answers.Q8 == 1 || answers.Q8 == 2">
+                <label class="question_required">If yes, type of transplant:<label class="required" ng-show="!answers.Q8_B && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q8_B_1" ng-model="answers.Q8_B" value="1">
+                      <label for="Q8_B_1">Heart</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q8_B_2" ng-model="answers.Q8_B" value="2">
+                      <label for="Q8_B_2">Heart/Lung</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q8_B_3" ng-model="answers.Q8_B" value="3">
+                      <label for="Q8_B_3">Intestine</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q8_B_4" ng-model="answers.Q8_B" value="4">
+                      <label for="Q8_B_4">Kidney</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q8_B_5" ng-model="answers.Q8_B" value="5">
+                      <label for="Q8_B_5">Kidney/Pancreas</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q8_B_6" ng-model="answers.Q8_B" value="6">
+                      <label for="Q8_B_6">Liver</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q8_B_7" ng-model="answers.Q8_B" value="7">
+                      <label for="Q8_B_7">Lung</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q8_B_8" ng-model="answers.Q8_B" value="8">
+                      <label for="Q8_B_8">Pancreas</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q8_B_9" ng-model="answers.Q8_B" value="9">
+                      <label for="Q8_B_9">Other</label>
+                    </div>
+                    <div ng-show="answers.Q8_B == 9">
+                        <br><label class="question_required" for="Q8_C_DTF">If yes, when did you have a transplant?<label class="required" ng-show="!dateValidate2(Q8_C_DTF) && required">Required</label></label>
+                        <input type="text" class="form-control" id="Q8_C_DTF" ng-model="Q8_C_DTF" placeholder="mm/dd/yyyy">
+                        <!--
+                        <p class="input-group datepicker">
+                            <input type="text" class="form-control" placeholder="MM/dd/yyyy" uib-datepicker-popup="MM/dd/yyyy" id="Q8_C_DT" ng-model="Q8_C_DT" is-open="datepicker2.opened" alt-input-formats="['M!/d!/yyyy','yyyy-M!-d!']"/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="datepicker2.opened=true"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="member_info.Gender=='F'">
+                <label class="question_required">9. Are you currently pregnant?<label class="required" ng-show="!answers.Q9 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q9_1" ng-model="answers.Q9" value="1">
+                      <label for="Q9_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q9_2" ng-model="answers.Q9" value="2">
+                      <label for="Q9_2">No</label>
+                    </div>
+                    <div ng-show="answers.Q9 == 1">
+                        <br><label class="question_required" for="Q9_A_DTF">If yes, when is your baby due?<label class="required" ng-show="!dateValidate2(Q9_A_DTF) && required">Required</label></label>
+                        <input type="text" class="form-control" id="Q9_A_DTF" ng-model="Q9_A_DTF" placeholder="mm/dd/yyyy">
+                        <!--
+                        <p class="input-group datepicker">
+                            <input type="text" class="form-control" placeholder="MM/dd/yyyy" uib-datepicker-popup="MM/dd/yyyy" id="Q9_A_DT" ng-model="Q9_A_DT" is-open="datepicker3.opened" alt-input-formats="['M!/d!/yyyy','yyyy-M!-d!']"/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="datepicker3.opened=true"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>-->
+                    </div>
+                </div>
+            </div>
+
+            <div ng-show="answers.Q9 == 1">
+                <div class="form-group">
+                    <label class="question_required">10. If yes, have you see a doctor for this pregnancy?<label class="required" ng-show="!answers.Q10 && required">Required</label></label>
+                    <div class="opt">
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q10_1" ng-model="answers.Q10" value="1">
+                          <label for="Q10_1">Yes</label>
+                        </div>
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q10_2" ng-model="answers.Q10" value="2">
+                          <label for="Q10_2">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="question_required">11. Has your doctor told you that this is a high risk pregnancy?<label class="required" ng-show="!answers.Q11 && required">Required</label></label>
+                    <div class="opt">
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q11_1" ng-model="answers.Q11" value="1">
+                          <label for="Q11_1">Yes</label>
+                        </div>
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q11_2" ng-model="answers.Q11" value="2">
+                          <label for="Q11_2">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="question_required">12. Has your doctor told you that this is a high risk pregnancy?<label class="required" ng-show="!answers.Q12 && required">Required</label></label>
+                    <div class="opt">
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q12_1" ng-model="answers.Q12" value="1">
+                          <label for="Q12_1">Yes</label>
+                        </div>
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q12_2" ng-model="answers.Q12" value="2">
+                          <label for="Q12_2">No</label>
+                        </div>
+                        <div class="radio-custom radio-primary">
+                          <input type="radio" id="Q12_3" ng-model="answers.Q12" value="3">
+                          <label for="Q12_3">N/A</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-show="answers.Q12 == 1">
+                    <label class="question_required">If yes, type of complications, click all that apply?
+                        <label class="required" ng-show="(answers.A12_A==undefined || !(answers.A12_A.length>0)) && required">Required</label>
+                    </label>
+                    <div class="opt">
+                        <div class="checkbox-custom">
+                            <input type="checkbox" id="A12_A_1" checklist-model="answers.A12_A" checklist-value="1">
+                            <label for="A12_A_1">Premature Labor</label>
+                        </div>
+                        <div class="checkbox-custom">
+                            <input type="checkbox" id="A12_A_2" checklist-model="answers.A12_A" checklist-value="2">
+                            <label for="A12_A_2">Premature Baby</label>
+                        </div>
+                        <div class="checkbox-custom">
+                            <input type="checkbox" id="A12_A_3" checklist-model="answers.A12_A" checklist-value="3">
+                            <label for="A12_A_3">Stillbirth</label>
+                        </div>
+                        <div class="checkbox-custom">
+                            <input type="checkbox" id="A12_A_4" checklist-model="answers.A12_A" checklist-value="4">
+                            <label for="A12_A_4">Other</label>
+                        </div>
+                        <div ng-show="answers.A12_A.indexOf(4) >= 0">
+                            <br><label class="question_required" for="Q12_B">If other, please specify:<label class="required" ng-show="!answers.Q12_B && required">Required</label></label>
+                            <input type="text" class="form-control" id="Q12_B" ng-model="answers.Q12_B">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="height: 80px">
+                <button ng-click="onPrev()" class="btn btn-warning pull-left"><i class="fa fa-backward"></i>&nbsp;&nbsp;Back</button>
+                <button ng-click="onNext()" class="btn btn-success pull-right">Next&nbsp;&nbsp;<i class="fa fa-forward"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+

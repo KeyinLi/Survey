@@ -1,0 +1,180 @@
+﻿
+
+<div id="scheduler">
+    <div id="container">
+        <div class="title">Lifestyle</div>
+        <div class="questions">
+          <div class="form-group">
+                <label class="question_required">59.  Do you eat a healthy diet most days?<label class="required" ng-show="!answers.Q59 && required">Required</label></label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q59_1" ng-model="answers.Q59" value="1">
+                      <label for="Q59_1">Yes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q59_2" ng-model="answers.Q59" value="2">
+                      <label for="Q59_2">No</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q59_3" ng-model="answers.Q59" value="3">
+                      <label for="Q59_3">Don't know</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="answers.Q59 == 1">
+                <label class="question_required">If yes, what do you do to eat healthy? (check all that apply)
+                    <label class="required" ng-show="(answers.A59_A==undefined || !(answers.A59_A.length)) && required">Required</label>
+                </label>
+                <div class="opt">
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A59_A_1" checklist-model="answers.A59_A" checklist-value="1">
+                        <label for="A59_A_1">Eat breakfast every day</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A59_A_2" checklist-model="answers.A59_A" checklist-value="2">
+                        <label for="A59_A_2">Limit the amount of fat in my food</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A59_A_3" checklist-model="answers.A59_A" checklist-value="3">
+                        <label for="A59_A_3">Limit the amount of saltt in my food</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A59_A_4" checklist-model="answers.A59_A" checklist-value="4">
+                        <label for="A59_A_4">Drink at least eight 8-ounce glasses of water a day (about 4 bottles)</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A59_A_5" checklist-model="answers.A59_A" checklist-value="5">
+                        <label for="A59_A_5">Eat several servings of vegatables a day</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A59_A_6" checklist-model="answers.A59_A" checklist-value="6">
+                        <label for="A59_A_6">Eat several servings of fruit a day</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">60.  On average, how many days per week do you get at least 30 minutes of physical activity or exercise?
+                    <label class="required" ng-show="!answers.Q60 && required">Required</label>
+                </label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q60_1" ng-model="answers.Q60" value="1">
+                      <label for="Q60_1">0</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q60_2" ng-model="answers.Q60" value="2">
+                      <label for="Q60_2">1</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q60_3" ng-model="answers.Q60" value="3">
+                      <label for="Q60_3">2</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q60_4" ng-model="answers.Q60" value="4">
+                      <label for="Q60_4">3</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q60_5" ng-model="answers.Q60" value="5">
+                      <label for="Q60_5">4</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q60_6" ng-model="answers.Q60" value="6">
+                      <label for="Q60_6">5</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q60_7" ng-model="answers.Q60" value="7">
+                      <label for="Q60_7">6</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q60_8" ng-model="answers.Q60" value="8">
+                      <label for="Q60_8">6</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q60_9" ng-model="answers.Q60" value="9">
+                      <label for="Q60_9">Don't Know</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">61.  Are there behaviors that you would like to change in the next six months?  Check all that apply:
+                    <label class="required" ng-show="(answers.A61==undefined || !(answers.A61.length>0)) && required">Required</label>
+                </label>
+                <div class="opt">
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A61_1" checklist-model="answers.A61" checklist-value="1">
+                        <label for="A61_1">Weight Management</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A61_2" checklist-model="answers.A61" checklist-value="2">
+                        <label for="A61_2">Nutrition/food choices</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A61_3" checklist-model="answers.A61" checklist-value="3">
+                        <label for="A61_3">Physical activity</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A61_4" checklist-model="answers.A61" checklist-value="4">
+                        <label for="A61_4">Stress management</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A61_5" checklist-model="answers.A61" checklist-value="5">
+                        <label for="A61_5">Tobacco use</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A61_6" checklist-model="answers.A61" checklist-value="6">
+                        <label for="A61_6">Drinking alcohol</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A61_7" checklist-model="answers.A61" checklist-value="7">
+                        <label for="A61_7">Getting the preventive health services your doctor recommends (like annual physicals or flu shots)</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A61_8" checklist-model="answers.A61" checklist-value="8">
+                        <label for="A61_8">Following your doctor's instructions for a chronic health condition (like diabetes or COPD)</label>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="A61_9" checklist-model="answers.A61" checklist-value="9">
+                        <label for="A61_9">None of the Above</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="question_required">62.  Are you ready to or are you already making changes to any of these behaviors?
+                    <label class="required" ng-show="!answers.Q62 && required">Required</label>
+                </label>
+                <div class="opt">
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q62_1" ng-model="answers.Q62" value="1">
+                      <label for="Q62_1">I am not ready to make any changes</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q62_2" ng-model="answers.Q62" value="2">
+                      <label for="Q62_2">I do not think I can make any changes on my own</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q62_3" ng-model="answers.Q62" value="3">
+                      <label for="Q62_3">I am making some changes or plan to withinone month</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q62_4" ng-model="answers.Q62" value="4">
+                      <label for="Q62_4">I have been actively making changes for up to six months</label>
+                    </div>
+                    <div class="radio-custom radio-primary">
+                      <input type="radio" id="Q62_5" ng-model="answers.Q62" value="5">
+                      <label for="Q62_5">I have maintained changes for over six months and the changes have become habits</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" style="height: 80px">
+                <button ng-click="onPrev()" class="btn btn-warning pull-left"><i class="fa fa-backward"></i>&nbsp;&nbsp;Back</button>
+                <button ng-click="onNext()" class="btn btn-success pull-right">Next&nbsp;&nbsp;<i class="fa fa-forward"></i></button>
+            </div>
+
+        </div>
+    </div>
+</div>
